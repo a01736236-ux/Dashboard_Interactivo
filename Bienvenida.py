@@ -10,6 +10,7 @@ def suma():
 
 suma()
 
+
 import matplotlib.pyplot as plt
 
 def graficar_ventas(dias, ventas):
@@ -30,3 +31,24 @@ def main_frontend():
 main_frontend()
 
 print("Despliegue de datos")
+
+def generar_datos_ventas():
+    dias = ["Lun", "Mar", "Mie", "Jue", "Vie"]
+    ventas = [120, 500, 230, 289, 310]
+    return dias, ventas
+
+def resumen_analitica():
+    dias, ventas = generar_datos_ventas()
+    total = sum(ventas)
+    promedio = total / len(ventas)
+    return {
+        "dias": dias, 
+        "ventas": ventas,
+        "total": total, 
+        "promedio": promedio
+    }
+
+datos = resumen_analitica()
+print("Total de ventas :", datos ["total"])
+print("Promedio diario:", datos ["promedio"])
+
